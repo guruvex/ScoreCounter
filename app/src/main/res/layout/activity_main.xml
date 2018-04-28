@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.rugbyscore.MainActivity">
+
+    <ImageView
+        style="@style/backgroundImage"
+        android:contentDescription="@string/rugbyBall"
+        android:src="@drawable/rugbyball" />
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/playerFrame">
+
+                    <TextView
+                        style="@style/teamName"
+                        android:id="@+id/team_A_Name"
+                        android:text="@string/firstTeamName" />
+
+                    <TextView
+                        android:id="@+id/team_A_Score"
+                        style="@style/scoreField" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamAFivePoint"
+                        android:text="@string/goalTry" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamAThreePoint"
+                        android:text="@string/penalty" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamAThreePoint"
+                        android:text="@string/goal" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamATwoPoint"
+                        android:text="@string/conversion" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+                <LinearLayout style="@style/playerFrame">
+
+                    <TextView
+                        style="@style/teamName"
+                        android:id="@+id/team_B_Name"
+                        android:text="@string/secondTeamName" />
+
+                    <TextView
+                        android:id="@+id/team_B_Score"
+                        style="@style/scoreField" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamBFivePoint"
+                        android:text="@string/goalTry" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamBThreePoint"
+                        android:text="@string/penalty" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamBThreePoint"
+                        android:text="@string/goal" />
+
+                    <Button
+                        style="@style/myButtons"
+                        android:onClick="teamBTwoPoint"
+                        android:text="@string/conversion" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                style="@style/myBigButtons"
+                android:onClick="reset"
+                android:text="@string/reset"
+                />
+
+            <Button
+                style="@style/myBigButtons"
+                android:onClick="setNames"
+                android:text="@string/nameTeams"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -3,7 +3,9 @@ package com.example.android.rugbyscore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
     int teamAScore = 0;
@@ -16,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
     TextView displayTeamAScore;
     TextView displayTeamBScore;
 
-    final String SCORE_A = "scoreA";
-    final String SCORE_B = "scoreB";
-    final String NAME_A = "scoreA";
-    final String NAME_B = "scoreB";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,28 +33,32 @@ public class MainActivity extends AppCompatActivity {
         displayTeamBScore.setText(""+teamBScore);
         displayTeamAName.setText(teamAName);
         displayTeamBName.setText(teamBName);
-    }
 
+    }
+/** save variables in the out bundle */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putInt("Score_A", teamAScore);
+        outState.putInt("Score_B", teamBScore);
+        outState.putString("Name_A", teamAName);
+        outState.putString("Name_B", teamBName);
         super.onSaveInstanceState(outState);
-        outState.putInt(SCORE_A, teamAScore);
-        outState.putInt(SCORE_B, teamBScore);
-        outState.putString(NAME_A, teamAName);
-        outState.putString(NAME_B, teamBName);
 
     }
+    /**
+     Restores app data on new state screen rotation
+     */
 
-    /** Restores app data on new state screen rotation */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        teamAScore =(savedInstanceState.getInt(SCORE_A));
-        teamBScore =(savedInstanceState.getInt(SCORE_B));
-        teamAName =(savedInstanceState.getString(NAME_A));
-        teamBName =(savedInstanceState.getString(NAME_B));
-
+        teamAScore =(savedInstanceState.getInt("Score_A"));
+        teamBScore =(savedInstanceState.getInt("Score_B"));
+        teamAName =(savedInstanceState.getString("Name_A"));
+        teamBName =(savedInstanceState.getString("Name_B"));
     }
+
     /** set team a score and display */
     public void teamATwoPoint (View view) {
         teamAScore+=2;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         teamAScore+=5;
         displayTeamA(teamAScore);
     }
+
     /** set team b score and display */
     public void teamBTwoPoint (View view) {
         teamBScore+=2;
@@ -99,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
         displayTeamBScore.setText (""+teamBScore);}
 
+    /** flip page to set team names */
     public void setNames(View view) {
+    }
+
+    public void renameTeamA(View view) {
+    }
+
+    public void renameTeamB(View view) {
     }
 }

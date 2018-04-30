@@ -13,4 +13,8 @@
 
     <string name="reset">Reset</string>
     <string name="nameTeams">Team Names</string>
+
+    <string name="nameTeamA">Name Team A</string>
+    <string name="nameTeamB">Name Team B</string>
+    <string name="done">Done</string>
 </resources>

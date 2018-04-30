@@ -30,7 +30,8 @@
                     <TextView
                         style="@style/teamName"
                         android:id="@+id/team_A_Name"
-                        android:text="@string/firstTeamName" />
+                        android:text="@string/firstTeamName"
+                        android:onClick="renameTeamA"/>
 
                     <TextView
                         android:id="@+id/team_A_Score"
@@ -67,7 +68,8 @@
                     <TextView
                         style="@style/teamName"
                         android:id="@+id/team_B_Name"
-                        android:text="@string/secondTeamName" />
+                        android:text="@string/secondTeamName"
+                        android:onClick="renameTeamB"/>
 
                     <TextView
                         android:id="@+id/team_B_Score"
@@ -102,10 +104,6 @@
                 android:text="@string/reset"
                 />
 
-            <Button
-                style="@style/myBigButtons"
-                android:onClick="setNames"
-                android:text="@string/nameTeams"/>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

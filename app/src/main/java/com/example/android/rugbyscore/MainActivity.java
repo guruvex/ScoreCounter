@@ -1,11 +1,11 @@
 package com.example.android.rugbyscore;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
+
 
 public class MainActivity extends AppCompatActivity {
     int teamAScore = 0;
@@ -29,13 +29,16 @@ public class MainActivity extends AppCompatActivity {
         displayTeamAName = findViewById(R.id.team_A_Name);
         displayTeamBName = findViewById(R.id.team_B_Name);
 
-        displayTeamAScore.setText(""+teamAScore);
-        displayTeamBScore.setText(""+teamBScore);
+        displayTeamAScore.setText("" + teamAScore);
+        displayTeamBScore.setText("" + teamBScore);
         displayTeamAName.setText(teamAName);
         displayTeamBName.setText(teamBName);
 
     }
-/** save variables in the out bundle */
+
+    /**
+     * save variables in the out bundle
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
@@ -46,69 +49,71 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
     }
+
     /**
-     Restores app data on new state screen rotation
+     * Restores app data on new state screen rotation
      */
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        teamAScore =(savedInstanceState.getInt("Score_A"));
-        teamBScore =(savedInstanceState.getInt("Score_B"));
-        teamAName =(savedInstanceState.getString("Name_A"));
-        teamBName =(savedInstanceState.getString("Name_B"));
+        teamAScore = (savedInstanceState.getInt("Score_A"));
+        teamBScore = (savedInstanceState.getInt("Score_B"));
+        teamAName = (savedInstanceState.getString("Name_A"));
+        teamBName = (savedInstanceState.getString("Name_B"));
     }
 
-    /** set team a score and display */
-    public void teamATwoPoint (View view) {
-        teamAScore+=2;
-        displayTeamA(teamAScore);
-    }
-    public void teamAThreePoint (View view) {
-        teamAScore+=3;
-        displayTeamA(teamAScore);
-    }
-    public void teamAFivePoint (View view) {
-        teamAScore+=5;
+    /**
+     * set team a score and display
+     */
+    public void teamATwoPoint(View view) {
+        teamAScore += 2;
         displayTeamA(teamAScore);
     }
 
-    /** set team b score and display */
-    public void teamBTwoPoint (View view) {
-        teamBScore+=2;
-        displayTeamB(teamBScore);
+    public void teamAThreePoint(View view) {
+        teamAScore += 3;
+        displayTeamA(teamAScore);
     }
-    public void teamBThreePoint (View view) {
-        teamBScore+=3;
-        displayTeamB(teamBScore);
+
+    public void teamAFivePoint(View view) {
+        teamAScore += 5;
+        displayTeamA(teamAScore);
     }
-    public void teamBFivePoint (View view) {
-        teamBScore+=5;
+
+    /**
+     * set team b score and display
+     */
+    public void teamBTwoPoint(View view) {
+        teamBScore += 2;
         displayTeamB(teamBScore);
     }
 
-    public void reset (View view) {
+    public void teamBThreePoint(View view) {
+        teamBScore += 3;
+        displayTeamB(teamBScore);
+    }
+
+    public void teamBFivePoint(View view) {
+        teamBScore += 5;
+        displayTeamB(teamBScore);
+    }
+
+    public void reset(View view) {
         teamAScore = 0;
         teamBScore = 0;
         displayTeamA(teamAScore);
         displayTeamB(teamBScore);
     }
 
-    public void displayTeamA (int teamAScore) {
+    public void displayTeamA(int teamAScore) {
 
-        displayTeamAScore.setText (""+teamAScore);
-    }
-    public void displayTeamB (int teamBScore) {
-
-        displayTeamBScore.setText (""+teamBScore);}
-
-    /** flip page to set team names */
-    public void setNames(View view) {
+        displayTeamAScore.setText("" + teamAScore);
     }
 
-    public void renameTeamA(View view) {
+    public void displayTeamB(int teamBScore) {
+
+        displayTeamBScore.setText("" + teamBScore);
     }
 
-    public void renameTeamB(View view) {
-    }
 }

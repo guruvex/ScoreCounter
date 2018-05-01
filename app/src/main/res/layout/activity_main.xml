@@ -28,10 +28,9 @@
                 <LinearLayout style="@style/playerFrame">
 
                     <TextView
-                        style="@style/teamName"
                         android:id="@+id/team_A_Name"
-                        android:text="@string/firstTeamName"
-                        android:onClick="renameTeamA"/>
+                        style="@style/teamName"
+                        android:text="@string/firstTeamName" />
 
                     <TextView
                         android:id="@+id/team_A_Score"
@@ -66,10 +65,9 @@
                 <LinearLayout style="@style/playerFrame">
 
                     <TextView
-                        style="@style/teamName"
                         android:id="@+id/team_B_Name"
-                        android:text="@string/secondTeamName"
-                        android:onClick="renameTeamB"/>
+                        style="@style/teamName"
+                        android:text="@string/secondTeamName" />
 
                     <TextView
                         android:id="@+id/team_B_Score"
@@ -101,8 +99,7 @@
             <Button
                 style="@style/myBigButtons"
                 android:onClick="reset"
-                android:text="@string/reset"
-                />
+                android:text="@string/reset" />
 
         </LinearLayout>
     </ScrollView>

@@ -12,28 +12,25 @@ public class MainActivity extends AppCompatActivity {
     int teamBScore = 0;
     String teamAName = "Team A";
     String teamBName = "Team B";
-
     TextView displayTeamAName;
     TextView displayTeamBName;
     TextView displayTeamAScore;
     TextView displayTeamBScore;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // link objects to XML
         displayTeamAScore = findViewById(R.id.team_A_Score);
         displayTeamBScore = findViewById(R.id.team_B_Score);
         displayTeamAName = findViewById(R.id.team_A_Name);
         displayTeamBName = findViewById(R.id.team_B_Name);
-
+        // set team names and score
         displayTeamAScore.setText("" + teamAScore);
         displayTeamBScore.setText("" + teamBScore);
         displayTeamAName.setText(teamAName);
         displayTeamBName.setText(teamBName);
-
     }
 
     /**
@@ -41,19 +38,16 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
         outState.putInt("Score_A", teamAScore);
         outState.putInt("Score_B", teamBScore);
         outState.putString("Name_A", teamAName);
         outState.putString("Name_B", teamBName);
         super.onSaveInstanceState(outState);
-
     }
 
     /**
      * Restores app data on new state screen rotation
      */
-
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -107,12 +101,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayTeamA(int teamAScore) {
-
         displayTeamAScore.setText("" + teamAScore);
     }
 
     public void displayTeamB(int teamBScore) {
-
         displayTeamBScore.setText("" + teamBScore);
     }
 
